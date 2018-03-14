@@ -53,7 +53,7 @@ function registerglobal() {
 		$args = func_get_args();
 
 		while (list(,$key) = each ($args)) {
-
+			
 			if (isset($_GET[$key])) $value = $_GET[$key];
 			if (isset($_POST[$key])) $value = $_POST[$key];
 			if (isset($_FILES[$key])) $value = $_FILES[$key];
@@ -67,7 +67,7 @@ function registerglobal() {
 					else
 						$value = slasharray($value);
 				}
-
+			
 				$GLOBALS[$key] = $value;
 				unset($value);
 			}
